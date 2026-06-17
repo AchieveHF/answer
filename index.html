@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>期末题库速记</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main id="homeView" class="home-view">
+      <header class="home-header">
+        <p class="eyebrow">期末刷题</p>
+        <h1>选择科目</h1>
+      </header>
+
+      <div class="home-actions">
+        <button id="openWrongBookBtn" class="secondary-btn" type="button">错题本</button>
+        <span id="homeWrongSummary" class="home-wrong-summary"></span>
+      </div>
+
+      <section id="subjectList" class="subject-list" aria-label="科目列表"></section>
+    </main>
+
+    <main id="subjectView" class="subject-view" hidden>
+      <header class="study-header">
+        <button id="backBtn" class="back-btn" type="button" aria-label="返回科目">‹</button>
+        <div class="study-title">
+          <p id="studyCount" class="eyebrow">0 题</p>
+          <h1 id="studySubject">科目</h1>
+        </div>
+        <button id="toggleAnswersBtn" class="answer-switch" type="button" role="switch" aria-checked="false" aria-label="显示全部答案">
+          <span class="switch-label">答案</span>
+          <span class="switch-track" aria-hidden="true">
+            <span class="switch-thumb"></span>
+          </span>
+        </button>
+      </header>
+
+      <section class="practice-panel" aria-label="答题记录">
+        <p id="practiceStats" class="practice-stats"></p>
+        <div class="progress-track" aria-hidden="true">
+          <span id="practiceProgress" class="progress-fill"></span>
+        </div>
+        <div class="practice-actions">
+          <button id="openSubjectWrongBookBtn" class="secondary-btn" type="button">错题本</button>
+          <button id="clearSubjectBtn" class="secondary-btn danger-text" type="button">清空答题记录</button>
+        </div>
+      </section>
+
+      <nav id="typeNav" class="type-nav" aria-label="题型跳转"></nav>
+
+      <section id="questionList" class="question-list" aria-live="polite"></section>
+    </main>
+
+    <main id="wrongBookView" class="subject-view" hidden>
+      <header class="study-header">
+        <button id="wrongBookBackBtn" class="back-btn" type="button" aria-label="返回">‹</button>
+        <div class="study-title">
+          <p id="wrongBookCount" class="eyebrow">0 题</p>
+          <h1 id="wrongBookTitle">错题本</h1>
+        </div>
+        <button id="wrongBookAllBtn" class="small-btn" type="button">全部</button>
+      </header>
+
+      <section class="practice-panel" aria-label="错题本记录">
+        <p id="wrongBookStats" class="practice-stats"></p>
+        <div class="practice-actions one-action">
+          <button id="clearWrongBookBtn" class="secondary-btn danger-text" type="button">清空错题本</button>
+        </div>
+      </section>
+
+      <section id="wrongBookList" class="question-list" aria-live="polite"></section>
+    </main>
+
+    <template id="subjectTemplate">
+      <button class="subject-card" type="button">
+        <span class="subject-name"></span>
+        <span class="subject-meta"></span>
+        <span class="subject-types"></span>
+      </button>
+    </template>
+
+    <template id="questionTemplate">
+      <article class="question-card">
+        <div class="question-topline">
+          <div class="meta-line"></div>
+          <button class="mark-btn" type="button" title="标记这道题">☆</button>
+        </div>
+        <h2 class="prompt"></h2>
+        <ol class="options"></ol>
+        <button class="answer-toggle" type="button">查看答案</button>
+        <div class="answer-panel" hidden>
+          <div class="answer-main"></div>
+          <div class="answer-extra"></div>
+        </div>
+      </article>
+    </template>
+
+    <script src="./question-bank-data.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

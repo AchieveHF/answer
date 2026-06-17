@@ -22618,7 +22618,7 @@ window.QUESTION_BANK = {
     {
       "id": "q1000",
       "subject": "软件测试",
-      "type": "true_false",
+      "type": "choice",
       "number": "120",
       "prompt": "单元测试的停止标准包括（ ）。",
       "options": [
@@ -24315,7 +24315,7 @@ window.QUESTION_BANK = {
     {
       "id": "q1120",
       "subject": "软件测试",
-      "type": "fill",
+      "type": "true_false",
       "number": "120",
       "prompt": "Mock对象在单元测试中用于替代真实的依赖对象，使被测单元能够在隔离的环境中独立进行测试。",
       "options": [],
@@ -39066,13 +39066,13 @@ window.QUESTION_BANK = {
       "面向对象分析与设计": 297
     },
     "byType": {
-      "choice": 772,
+      "choice": 773,
       "multiple_choice": 102,
       "true_false": 572,
       "programming": 6,
       "design": 15,
       "sql_application": 5,
-      "fill": 194,
+      "fill": 193,
       "calculation": 6,
       "short_answer": 58
     }

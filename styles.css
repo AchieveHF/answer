@@ -494,6 +494,25 @@ button:active {
   color: var(--coral);
 }
 
+.fill-blank {
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: center;
+  min-width: 5.5em;
+  min-height: 1.25em;
+  margin: 0 0.18em;
+  padding: 0 0.24em 0.08em;
+  border-bottom: 2px solid var(--line-strong);
+  color: var(--accent);
+  font-weight: 800;
+  line-height: 1.2;
+  vertical-align: baseline;
+}
+
+.question-card.answer-visible .fill-blank {
+  border-bottom-color: var(--accent);
+}
+
 .options {
   display: grid;
   gap: 8px;

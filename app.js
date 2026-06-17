@@ -290,26 +290,52 @@ function highlightTermsForQuestion(q) {
     .slice(0, 6);
 }
 
-function renderPrompt(target, text, terms) {
+function renderPrompt(target, text, terms, q, revealAnswer = false) {
   target.textContent = "";
   const cleanTerms = terms.filter(Boolean);
-  if (!cleanTerms.length) {
-    target.textContent = text;
+  const blankToken = "__FILL_BLANK__";
+  let displayText = String(text || "");
+  if (q?.type === "fill") {
+    displayText = displayText.replace(/_{1,}|＿+|（\s*\d*\s*）|\(\s*\d*\s*\)/g, blankToken);
+    if (!displayText.includes(blankToken)) {
+      displayText = displayText.replace(/(的)\s+(?=(表示|是|为|用于|称为))/g, `$1${blankToken}`);
+    }
+  }
+  const hasBlank = q?.type === "fill" && displayText.includes(blankToken);
+  const answerForBlank = revealAnswer ? cleanText(q?.answer || q?.answerText || "") : "";
+
+  const termPattern = cleanTerms.map((term) => term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|");
+  const pieces = [q?.type === "fill" ? blankToken : "", termPattern].filter(Boolean);
+  if (!pieces.length) {
+    target.textContent = displayText;
+    if (q?.type === "fill") target.append(createBlankNode(answerForBlank));
     return;
   }
 
-  const pattern = cleanTerms.map((term) => term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|");
-  const matcher = new RegExp(`(${pattern})`, "g");
-  const fragments = String(text || "").split(matcher);
+  const matcher = new RegExp(`(${pieces.join("|")})`, "g");
+  const fragments = displayText.split(matcher);
   const termSet = new Set(cleanTerms);
 
   for (const fragment of fragments) {
     if (!fragment) continue;
+    if (q?.type === "fill" && fragment === blankToken) {
+      target.append(createBlankNode(answerForBlank));
+      continue;
+    }
     const span = document.createElement("span");
     span.textContent = fragment;
     if (termSet.has(fragment)) span.className = "memory-highlight";
     target.append(span);
   }
+
+  if (q?.type === "fill" && !hasBlank) target.append(createBlankNode(answerForBlank));
+}
+
+function createBlankNode(answer = "") {
+  const blank = document.createElement("span");
+  blank.className = "fill-blank";
+  blank.textContent = answer || "";
+  return blank;
 }
 
 function correctLetters(q) {
@@ -634,7 +660,7 @@ function renderQuestion(q, indexInType, renderOptions = {}) {
   });
 
   const prompt = node.querySelector(".prompt");
-  renderPrompt(prompt, q.prompt, highlightTermsForQuestion(q));
+  const promptTerms = highlightTermsForQuestion(q);
 
   const answerPanel = node.querySelector(".answer-panel");
   const answerButton = node.querySelector(".answer-toggle");
@@ -650,6 +676,7 @@ function renderQuestion(q, indexInType, renderOptions = {}) {
     answerPanel.hidden = !visible;
     node.classList.toggle("answer-visible", visible);
     answerButton.textContent = visible ? "收起答案" : "查看答案";
+    renderPrompt(prompt, q.prompt, promptTerms, q, visible);
     if (visible) {
       state.revealed.add(q.id);
     } else {

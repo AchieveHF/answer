@@ -57,6 +57,10 @@ button {
   padding: 18px 16px 34px;
 }
 
+.subject-view {
+  padding-bottom: 82px;
+}
+
 .home-header {
   padding: 14px 2px 18px;
 }
@@ -393,12 +397,18 @@ button:active {
 }
 
 .question-card {
+  scroll-margin-top: 124px;
   margin-bottom: 9px;
   padding: 14px;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--surface-strong);
   box-shadow: none;
+}
+
+.question-card.continue-focus {
+  border-color: rgba(13, 111, 101, 0.42);
+  box-shadow: 0 0 0 3px rgba(13, 111, 101, 0.1);
 }
 
 .question-topline {
@@ -688,6 +698,26 @@ button:active {
   color: var(--muted);
   font-size: 15px;
   font-weight: 700;
+}
+
+.continue-study-btn {
+  position: fixed;
+  right: max(16px, calc((100vw - 760px) / 2 + 16px));
+  bottom: calc(18px + env(safe-area-inset-bottom));
+  z-index: 20;
+  min-height: 42px;
+  padding: 0 17px;
+  border-color: rgba(21, 24, 22, 0.14);
+  border-radius: 999px;
+  background: var(--ink);
+  color: #ffffff;
+  box-shadow: 0 10px 24px rgba(21, 24, 22, 0.18);
+  font-size: 14px;
+  font-weight: 820;
+}
+
+.continue-study-btn:active {
+  transform: translateY(1px);
 }
 
 @media (min-width: 760px) {

@@ -129,6 +129,7 @@ const els = {
   toggleAnswersBtn: document.querySelector("#toggleAnswersBtn"),
   clearSubjectBtn: document.querySelector("#clearSubjectBtn"),
   openSubjectWrongBookBtn: document.querySelector("#openSubjectWrongBookBtn"),
+  continueStudyBtn: document.querySelector("#continueStudyBtn"),
   studySubject: document.querySelector("#studySubject"),
   studyCount: document.querySelector("#studyCount"),
   practiceStats: document.querySelector("#practiceStats"),
@@ -358,6 +359,15 @@ function isObjective(q) {
   return correctLetters(q).size > 0 && answerOptions(q).length > 0;
 }
 
+function isChecked(q) {
+  return Boolean(state.attempts[q.id]?.checked);
+}
+
+function hasAttemptProgress(q) {
+  const attempt = state.attempts[q.id];
+  return Boolean(attempt?.checked || attempt?.selected?.length);
+}
+
 function sameChoice(a, b) {
   const left = [...a].sort();
   const right = [...b].sort();
@@ -457,6 +467,7 @@ function openWrongBook(subject = "", returnTo = "home") {
   els.homeView.hidden = true;
   els.subjectView.hidden = true;
   els.wrongBookView.hidden = false;
+  els.continueStudyBtn.hidden = true;
   renderWrongBook();
   window.scrollTo({ top: 0, behavior: "auto" });
 }
@@ -475,6 +486,56 @@ function closeWrongBook() {
     renderHome();
   }
   window.scrollTo({ top: 0, behavior: "auto" });
+}
+
+function orderedSubjectItems(items) {
+  return [...groupedByType(items).values()].flat();
+}
+
+function continueStudyInfo(items = subjectItems()) {
+  const ordered = orderedSubjectItems(items);
+  const objectiveItems = ordered.filter(isObjective);
+  const answered = objectiveItems.filter(isChecked).length;
+  const hasProgress = objectiveItems.some(hasAttemptProgress);
+
+  if (!hasProgress || !objectiveItems.length || answered >= objectiveItems.length) return null;
+
+  const partial = objectiveItems.find((q) => {
+    const attempt = state.attempts[q.id];
+    return attempt?.selected?.length && !attempt.checked;
+  });
+  if (partial) return { target: partial, answered, total: objectiveItems.length };
+
+  let lastProgressIndex = -1;
+  ordered.forEach((q, index) => {
+    if (isObjective(q) && hasAttemptProgress(q)) lastProgressIndex = index;
+  });
+
+  const target =
+    ordered.slice(lastProgressIndex + 1).find((q) => isObjective(q) && !isChecked(q)) ||
+    objectiveItems.find((q) => !isChecked(q));
+
+  return target ? { target, answered, total: objectiveItems.length } : null;
+}
+
+function updateContinueStudyButton(items = subjectItems()) {
+  const info = continueStudyInfo(items);
+  els.continueStudyBtn.hidden = !info;
+  if (!info) return;
+  els.continueStudyBtn.setAttribute("aria-label", `继续看题，已答 ${info.answered} / ${info.total}`);
+}
+
+function continueStudy() {
+  const info = continueStudyInfo();
+  if (!info) {
+    updateContinueStudyButton();
+    return;
+  }
+  const target = document.getElementById(info.target.id);
+  if (!target) return;
+  target.scrollIntoView({ behavior: "smooth", block: "start" });
+  target.classList.add("continue-focus");
+  window.setTimeout(() => target.classList.remove("continue-focus"), 1100);
 }
 
 function clearSubjectRecords() {
@@ -532,6 +593,7 @@ function updateStudyHeader() {
   els.studyCount.textContent = subjectSummary(items);
   els.practiceStats.textContent = statsText(items);
   els.practiceProgress.style.width = `${items.length ? (stats.answered / items.length) * 100 : 0}%`;
+  updateContinueStudyButton(items);
 }
 
 function groupedByType(items) {
@@ -790,6 +852,7 @@ function renderQuestion(q, indexInType, renderOptions = {}) {
             if (selected.has(opt.key)) selected.delete(opt.key);
             else selected.add(opt.key);
             saveAttempt(q, selected, false);
+            updateContinueStudyButton();
           } else {
             selected = new Set([opt.key]);
             saveAttempt(q, selected, true);
@@ -817,6 +880,7 @@ function renderQuestion(q, indexInType, renderOptions = {}) {
         clearAttempt(q);
         selected = new Set();
         setVisible(false);
+        updateStudyHeader();
       } else {
         saveAttempt(q, selected, true);
         updateStudyHeader();
@@ -835,6 +899,7 @@ function renderQuestion(q, indexInType, renderOptions = {}) {
 els.backBtn.addEventListener("click", closeSubject);
 els.openWrongBookBtn.addEventListener("click", () => openWrongBook("", "home"));
 els.openSubjectWrongBookBtn.addEventListener("click", () => openWrongBook(state.subject, "subject"));
+els.continueStudyBtn.addEventListener("click", continueStudy);
 els.clearSubjectBtn.addEventListener("click", clearSubjectRecords);
 els.wrongBookBackBtn.addEventListener("click", closeWrongBook);
 els.wrongBookAllBtn.addEventListener("click", () => openWrongBook("", state.wrongBookReturn));

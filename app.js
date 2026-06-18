@@ -629,6 +629,7 @@ function updateStudyHeader() {
   const stats = subjectStats(items);
   els.studyCount.textContent = subjectSummary(items);
   els.practiceStats.textContent = statsText(items);
+  els.openSubjectWrongBookBtn.textContent = `错题本 ${stats.wrongBook}`;
   els.practiceProgress.style.width = `${items.length ? (stats.answered / items.length) * 100 : 0}%`;
   updateContinueStudyButton(items);
 }

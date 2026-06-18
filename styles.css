@@ -148,7 +148,7 @@ h1 {
 .study-header {
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 12;
   display: grid;
   grid-template-columns: 36px 1fr 112px;
   align-items: center;
@@ -288,7 +288,7 @@ h1 {
 
 .subject-practice-panel .study-summary-line {
   grid-column: 1 / -1;
-  grid-row: 2;
+  grid-row: 1;
   margin: 0;
   overflow-x: auto;
   color: var(--accent);
@@ -308,14 +308,10 @@ h1 {
 
 .subject-practice-panel .practice-actions {
   grid-column: 1 / -1;
-  grid-row: 3;
+  grid-row: 2;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 9px;
-}
-
-.subject-practice-panel .progress-track {
-  grid-row: 1;
 }
 
 .subject-practice-panel .practice-actions .secondary-btn {
@@ -344,6 +340,14 @@ h1 {
   border-radius: inherit;
   background: var(--accent);
   transition: width 0.2s ease;
+}
+
+.study-progress-track {
+  position: sticky;
+  top: 53px;
+  z-index: 11;
+  margin: 0 -16px;
+  border-radius: 0;
 }
 
 .practice-actions {
@@ -380,8 +384,8 @@ button:active {
 
 .type-nav {
   position: sticky;
-  top: 53px;
-  z-index: 9;
+  top: 56px;
+  z-index: 10;
   display: flex;
   gap: 6px;
   margin: 0 -16px 10px;

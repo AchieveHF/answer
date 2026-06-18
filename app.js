@@ -159,6 +159,7 @@ const state = {
   wrongBookReturn: "home",
   showAllAnswers: false,
   revealed: new Set(),
+  continueDismissedTargetId: "",
   attempts: readCache("questionBankAttempts", {}),
   wrongIds: new Set(readCache("questionBankWrongIds", [])),
   wrongBook: readCache("questionBankWrongBook", {}),
@@ -442,6 +443,7 @@ function openSubject(subject) {
   state.subject = subject;
   state.showAllAnswers = false;
   state.revealed.clear();
+  state.continueDismissedTargetId = "";
   els.homeView.hidden = true;
   els.subjectView.hidden = false;
   els.wrongBookView.hidden = true;
@@ -464,6 +466,7 @@ function openWrongBook(subject = "", returnTo = "home") {
   state.wrongBookSubject = subject;
   state.wrongBookReturn = returnTo;
   state.revealed.clear();
+  state.continueDismissedTargetId = "";
   els.homeView.hidden = true;
   els.subjectView.hidden = true;
   els.wrongBookView.hidden = false;
@@ -520,9 +523,32 @@ function continueStudyInfo(items = subjectItems()) {
 
 function updateContinueStudyButton(items = subjectItems()) {
   const info = continueStudyInfo(items);
-  els.continueStudyBtn.hidden = !info;
-  if (!info) return;
+  if (!info) {
+    els.continueStudyBtn.hidden = true;
+    state.continueDismissedTargetId = "";
+    return;
+  }
+  if (state.continueDismissedTargetId && state.continueDismissedTargetId !== info.target.id) {
+    state.continueDismissedTargetId = "";
+  }
+  if (state.continueDismissedTargetId === info.target.id || continueTargetReached(info.target)) {
+    dismissContinueStudy(info.target.id);
+    return;
+  }
+  els.continueStudyBtn.hidden = false;
   els.continueStudyBtn.setAttribute("aria-label", `继续看题，已答 ${info.answered} / ${info.total}`);
+}
+
+function continueTargetReached(q) {
+  const target = document.getElementById(q.id);
+  if (!target) return false;
+  const threshold = Math.min(460, Math.max(220, window.innerHeight * 0.5));
+  return target.getBoundingClientRect().top <= threshold;
+}
+
+function dismissContinueStudy(targetId = "") {
+  state.continueDismissedTargetId = targetId;
+  els.continueStudyBtn.hidden = true;
 }
 
 function continueStudy() {
@@ -533,9 +559,20 @@ function continueStudy() {
   }
   const target = document.getElementById(info.target.id);
   if (!target) return;
+  dismissContinueStudy(info.target.id);
   target.scrollIntoView({ behavior: "smooth", block: "start" });
   target.classList.add("continue-focus");
   window.setTimeout(() => target.classList.remove("continue-focus"), 1100);
+}
+
+let continueScrollFrame = 0;
+function handleContinueStudyScroll() {
+  if (continueScrollFrame || els.subjectView.hidden || els.continueStudyBtn.hidden) return;
+  continueScrollFrame = window.requestAnimationFrame(() => {
+    continueScrollFrame = 0;
+    const info = continueStudyInfo();
+    if (info && continueTargetReached(info.target)) dismissContinueStudy(info.target.id);
+  });
 }
 
 function clearSubjectRecords() {
@@ -550,6 +587,7 @@ function clearSubjectRecords() {
   }
   state.revealed.clear();
   state.showAllAnswers = false;
+  state.continueDismissedTargetId = "";
   savePracticeState();
   renderSubject();
 }
@@ -900,6 +938,7 @@ els.backBtn.addEventListener("click", closeSubject);
 els.openWrongBookBtn.addEventListener("click", () => openWrongBook("", "home"));
 els.openSubjectWrongBookBtn.addEventListener("click", () => openWrongBook(state.subject, "subject"));
 els.continueStudyBtn.addEventListener("click", continueStudy);
+window.addEventListener("scroll", handleContinueStudyScroll, { passive: true });
 els.clearSubjectBtn.addEventListener("click", clearSubjectRecords);
 els.wrongBookBackBtn.addEventListener("click", closeWrongBook);
 els.wrongBookAllBtn.addEventListener("click", () => openWrongBook("", state.wrongBookReturn));

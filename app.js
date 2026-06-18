@@ -667,13 +667,20 @@ function renderQuestion(q, indexInType, renderOptions = {}) {
   const answerMain = node.querySelector(".answer-main");
   const answerExtra = node.querySelector(".answer-extra");
 
-  answerMain.textContent = `答案：${readableAnswer(q)}`;
-  answerExtra.textContent = [q.explanation && `解析：${q.explanation}`]
+  const objective = isObjective(q);
+  const answerMainText = objective ? "" : `答案：${readableAnswer(q)}`;
+  const answerExtraText = [q.explanation && `解析：${q.explanation}`]
     .filter(Boolean)
     .join("\n");
+  answerMain.textContent = answerMainText;
+  answerMain.hidden = !answerMainText;
+  answerExtra.textContent = answerExtraText;
+  answerExtra.hidden = !answerExtraText;
 
+  let answerVisible = false;
   function setVisible(visible) {
-    answerPanel.hidden = !visible;
+    answerVisible = visible;
+    answerPanel.hidden = !visible || (!answerMainText && !answerExtraText);
     node.classList.toggle("answer-visible", visible);
     answerButton.textContent = visible ? "收起答案" : "查看答案";
     renderPrompt(prompt, q.prompt, promptTerms, q, visible);
@@ -687,7 +694,6 @@ function renderQuestion(q, indexInType, renderOptions = {}) {
   const options = node.querySelector(".options");
   const correct = correctLetters(q);
   const choices = answerOptions(q);
-  const objective = isObjective(q);
   let selected = new Set(state.attempts[q.id]?.selected || []);
 
   const result = document.createElement("div");
@@ -821,7 +827,7 @@ function renderQuestion(q, indexInType, renderOptions = {}) {
 
   setVisible(Boolean(state.attempts[q.id]?.checked) || state.showAllAnswers || state.revealed.has(q.id));
   refreshPracticeUi();
-  answerButton.addEventListener("click", () => setVisible(answerPanel.hidden));
+  answerButton.addEventListener("click", () => setVisible(!answerVisible));
 
   return node;
 }

@@ -844,7 +844,7 @@ function renderQuestion(q, indexInType, renderOptions = {}) {
     if (checked) {
       result.hidden = false;
       result.className = `quiz-result ${attempt.correct ? "correct" : "wrong"}`;
-      result.textContent = attempt.correct ? "答对了 ✓" : "答错了 ×，绿色项为正确答案";
+      result.textContent = attempt.correct ? "答对了 ✓" : "答错了 ×";
       setVisible(true);
     } else {
       result.hidden = true;

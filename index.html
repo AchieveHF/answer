@@ -25,7 +25,6 @@
       <header class="study-header">
         <button id="backBtn" class="back-btn" type="button" aria-label="返回科目">‹</button>
         <div class="study-title">
-          <p id="studyCount" class="eyebrow">0 题</p>
           <h1 id="studySubject">科目</h1>
         </div>
         <button id="toggleAnswersBtn" class="answer-switch" type="button" role="switch" aria-checked="false" aria-label="显示全部答案">
@@ -36,7 +35,8 @@
         </button>
       </header>
 
-      <section class="practice-panel" aria-label="答题记录">
+      <section class="practice-panel subject-practice-panel" aria-label="答题记录">
+        <p id="studyCount" class="study-summary-line">0 题</p>
         <p id="practiceStats" class="practice-stats"></p>
         <div class="progress-track" aria-hidden="true">
           <span id="practiceProgress" class="progress-fill"></span>

@@ -618,7 +618,6 @@ function subjectSummary(items) {
     `${items.length} 题`,
     stats.answered ? `已答 ${stats.answered}` : "",
     stats.rate !== null ? `正确率 ${stats.rate}%` : "",
-    stats.wrongBook ? `错题本 ${stats.wrongBook}` : "",
   ]
     .filter(Boolean)
     .join(" · ");

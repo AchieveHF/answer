@@ -273,7 +273,7 @@ h1 {
   grid-template-columns: 1fr auto;
   align-items: center;
   column-gap: 12px;
-  row-gap: 7px;
+  row-gap: 8px;
   padding: 8px 0;
 }
 
@@ -288,6 +288,7 @@ h1 {
 
 .subject-practice-panel .study-summary-line {
   grid-column: 1 / -1;
+  grid-row: 2;
   margin: 0;
   overflow-x: auto;
   color: var(--accent);
@@ -307,12 +308,25 @@ h1 {
 
 .subject-practice-panel .practice-actions {
   grid-column: 1 / -1;
-  grid-row: 2;
-  justify-content: flex-end;
+  grid-row: 3;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px;
 }
 
 .subject-practice-panel .progress-track {
-  grid-row: 3;
+  grid-row: 1;
+}
+
+.subject-practice-panel .practice-actions .secondary-btn {
+  width: 100%;
+  min-width: 0;
+}
+
+.subject-practice-panel .practice-actions .danger-text {
+  padding: 0 11px;
+  border-color: var(--line);
+  background: var(--surface-strong);
 }
 
 .progress-track {
@@ -366,7 +380,7 @@ button:active {
 
 .type-nav {
   position: sticky;
-  top: 65px;
+  top: 53px;
   z-index: 9;
   display: flex;
   gap: 6px;
@@ -403,7 +417,7 @@ button:active {
 }
 
 .type-section {
-  scroll-margin-top: 118px;
+  scroll-margin-top: 106px;
 }
 
 .type-heading {
@@ -426,7 +440,7 @@ button:active {
 }
 
 .question-card {
-  scroll-margin-top: 124px;
+  scroll-margin-top: 112px;
   margin-bottom: 9px;
   padding: 14px;
   border: 1px solid var(--line);

@@ -14847,8 +14847,8 @@ window.QUESTION_BANK = {
           "text": "按计划行事重于对变化的响应"
         }
       ],
-      "answer": "CD",
-      "answerText": "C. 客户合作重于合同的协商；D. 按计划行事重于对变化的响应",
+      "answer": "D",
+      "answerText": "D. 按计划行事重于对变化的响应",
       "explanation": "",
       "status": "verified",
       "answerSource": "Word 红色答案标注",
@@ -14878,8 +14878,8 @@ window.QUESTION_BANK = {
           "text": "UML构件图"
         }
       ],
-      "answer": "BC",
-      "answerText": "B. UML用况图；C. UML活动图",
+      "answer": "C",
+      "answerText": "C. UML活动图",
       "explanation": "",
       "status": "verified",
       "answerSource": "Word 红色答案标注",
@@ -14940,8 +14940,8 @@ window.QUESTION_BANK = {
           "text": "数据流h"
         }
       ],
-      "answer": "CD",
-      "answerText": "C. 数据流e；D. 数据流h",
+      "answer": "D",
+      "answerText": "D. 数据流h",
       "explanation": "",
       "status": "verified",
       "answerSource": "Word 红色答案标注",
@@ -15281,8 +15281,8 @@ window.QUESTION_BANK = {
           "text": "确认测试"
         }
       ],
-      "answer": "AB",
-      "answerText": "A. 恢复测试；B. 回归测试",
+      "answer": "B",
+      "answerText": "B. 回归测试",
       "explanation": "",
       "status": "verified",
       "answerSource": "Word 红色答案标注",
@@ -15591,8 +15591,8 @@ window.QUESTION_BANK = {
           "text": "UML构件图"
         }
       ],
-      "answer": "AB",
-      "answerText": "A. UML类图；B. UML状态机图",
+      "answer": "B",
+      "answerText": "B. UML状态机图",
       "explanation": "",
       "status": "verified",
       "answerSource": "Word 红色答案标注",
@@ -15622,8 +15622,8 @@ window.QUESTION_BANK = {
           "text": "数据流f"
         }
       ],
-      "answer": "BC",
-      "answerText": "B. 数据流b；C. 数据流c",
+      "answer": "C",
+      "answerText": "C. 数据流c",
       "explanation": "",
       "status": "verified",
       "answerSource": "Word 红色答案标注",
@@ -15870,8 +15870,8 @@ window.QUESTION_BANK = {
           "text": "功能内聚"
         }
       ],
-      "answer": "CD",
-      "answerText": "C. 过程内聚；D. 功能内聚",
+      "answer": "D",
+      "answerText": "D. 功能内聚",
       "explanation": "",
       "status": "verified",
       "answerSource": "Word 红色答案标注",
@@ -15932,8 +15932,8 @@ window.QUESTION_BANK = {
           "text": "可移植性（portability）(转移方面的)"
         }
       ],
-      "answer": "CD",
-      "answerText": "C. 效率（efficiency）；D. 可移植性（portability）(转移方面的)",
+      "answer": "D",
+      "answerText": "D. 可移植性（portability）(转移方面的)",
       "explanation": "",
       "status": "verified",
       "answerSource": "Word 红色答案标注",
@@ -16230,8 +16230,8 @@ window.QUESTION_BANK = {
           "text": "编写测试用例"
         }
       ],
-      "answer": "CD",
-      "answerText": "C. 调查问卷；D. 编写测试用例",
+      "answer": "D",
+      "answerText": "D. 编写测试用例",
       "explanation": "",
       "status": "verified",
       "answerSource": "Word 红色答案标注",
@@ -16292,8 +16292,8 @@ window.QUESTION_BANK = {
           "text": "调用和返回体系结构风格"
         }
       ],
-      "answer": "AB",
-      "answerText": "A. 管道过滤器体系结构风格；B. 层次式体系结构风格",
+      "answer": "B",
+      "answerText": "B. 层次式体系结构风格",
       "explanation": "",
       "status": "verified",
       "answerSource": "Word 红色答案标注",
@@ -16354,8 +16354,8 @@ window.QUESTION_BANK = {
           "text": "公共耦合"
         }
       ],
-      "answer": "AB",
-      "answerText": "A. 数据耦合；B. 内容耦合",
+      "answer": "B",
+      "answerText": "B. 内容耦合",
       "explanation": "",
       "status": "verified",
       "answerSource": "Word 红色答案标注",

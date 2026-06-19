@@ -818,7 +818,6 @@ function renderQuestion(q, indexInType, renderOptions = {}) {
   const answerMainText = objective ? "" : `答案：${readableAnswer(q)}`;
   const answerExtraText = [
     knowledge?.point && `知识点：${knowledge.point}`,
-    knowledge?.memory && `速记：${knowledge.memory}`,
     !knowledge && q.explanation && `解析：${q.explanation}`,
   ]
     .filter(Boolean)

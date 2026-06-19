@@ -2118,10 +2118,27 @@
       "subject": "Web应用开发",
       "type": "choice",
       "number": "70",
-      "prompt": "使用动作标记可以在 JSP 页面中获得 Bean 的属性，但必须保证 Bean 有对应的\n________方法。（）",
-      "options": [],
+      "prompt": "使用动作标记可以在 JSP 页面中获得 Bean 的属性，但必须保证 Bean 有对应的________方法。",
+      "options": [
+        {
+          "key": "A",
+          "text": "SetXxx 方法"
+        },
+        {
+          "key": "B",
+          "text": "setXxx 方法"
+        },
+        {
+          "key": "C",
+          "text": "getXxx 方法"
+        },
+        {
+          "key": "D",
+          "text": "GetXxx 方法"
+        }
+      ],
       "answer": "C",
-      "answerText": "",
+      "answerText": "C. getXxx 方法",
       "explanation": "",
       "status": "verified",
       "answerSource": "显式答案标注",
@@ -2857,15 +2874,15 @@
         },
         {
           "key": "C",
-          "text": "服务器停止时，将调用 destory()方法"
+          "text": "服务器停止时，将调用 destroy() 方法"
         },
         {
           "key": "D",
-          "text": "在 Servlet 的生命周期中，每次调用 Servlet 都需要初始化 Servlet 一次\nJDBC 应用"
+          "text": "在 Servlet 的生命周期中，每次调用 Servlet 都需要初始化 Servlet 一次"
         }
       ],
       "answer": "D",
-      "answerText": "D. 在 Servlet 的生命周期中，每次调用 Servlet 都需要初始化 Servlet 一次\nJDBC 应用",
+      "answerText": "D. 在 Servlet 的生命周期中，每次调用 Servlet 都需要初始化 Servlet 一次",
       "explanation": "",
       "status": "verified",
       "answerSource": "显式答案标注",
@@ -2985,11 +3002,11 @@
         },
         {
           "key": "D",
-          "text": "java.sql.CallableStatement\nEL/JSTL 应用"
+          "text": "java.sql.CallableStatement"
         }
       ],
       "answer": "D",
-      "answerText": "D. java.sql.CallableStatement\nEL/JSTL 应用",
+      "answerText": "D. java.sql.CallableStatement",
       "explanation": "",
       "status": "verified",
       "answerSource": "显式答案标注",
@@ -3078,11 +3095,11 @@
         },
         {
           "key": "D",
-          "text": "JSTL 只有一个 Core 核心标签库\n框架应用"
+          "text": "JSTL 只有一个 Core 核心标签库"
         }
       ],
       "answer": "D",
-      "answerText": "D. JSTL 只有一个 Core 核心标签库\n框架应用",
+      "answerText": "D. JSTL 只有一个 Core 核心标签库",
       "explanation": "",
       "status": "verified",
       "answerSource": "显式答案标注",
@@ -3277,7 +3294,7 @@
     {
       "id": "q0107",
       "subject": "Web应用开发",
-      "type": "multiple_choice",
+      "type": "choice",
       "number": "110",
       "prompt": "struts2 默认的处理结果类型是________。",
       "options": [
@@ -3295,7 +3312,7 @@
         },
         {
           "key": "D",
-          "text": "以上说法都不正确\n二、多项选择题\nWeb 应用基础"
+          "text": "以上说法都不正确"
         }
       ],
       "answer": "A",
@@ -3405,9 +3422,9 @@
     {
       "id": "q0111",
       "subject": "Web应用开发",
-      "type": "multiple_choice",
+      "type": "choice",
       "number": "114",
-      "prompt": "JSP 脚本语法包括以下哪些成分？它们是________。（多选）",
+      "prompt": "JSP 脚本语法包括以下哪些成分？它们是________。",
       "options": [
         {
           "key": "A",
@@ -3892,11 +3909,11 @@
         },
         {
           "key": "D",
-          "text": "存储在客户端的 HTML 网页\nJSP 标记及动作"
+          "text": "存储在客户端的 HTML 网页"
         }
       ],
       "answer": "ABCD",
-      "answerText": "A. 隐藏字段必须使用表单；B. 隐藏字段在浏览器中对用户不直接可见；C. 查看网页源代码找出隐藏字段；D. 存储在客户端的 HTML 网页\nJSP 标记及动作",
+      "answerText": "A. 隐藏字段必须使用表单；B. 隐藏字段在浏览器中对用户不直接可见；C. 查看网页源代码找出隐藏字段；D. 存储在客户端的 HTML 网页",
       "explanation": "",
       "status": "verified",
       "answerSource": "显式答案标注",
@@ -4334,7 +4351,7 @@
         },
         {
           "key": "D",
-          "text": "使用异常处理方法\n框架应用"
+          "text": "使用异常处理方法"
         }
       ],
       "answer": "ABC",
@@ -4394,7 +4411,7 @@
       "subject": "Web应用开发",
       "type": "true_false",
       "number": "2",
-      "prompt": "动态网页和静态网页的根本区别在于服务器端返回的HTML文件是事先存储好的还\n是由动态网页程序生成的（ ）\n判断题-HTML 基础",
+      "prompt": "动态网页和静态网页的根本区别在于服务器端返回的HTML文件是事先存储好的还\n是由动态网页程序生成的（ ）",
       "options": [],
       "answer": "T",
       "answerText": "",
@@ -4422,7 +4439,7 @@
       "subject": "Web应用开发",
       "type": "true_false",
       "number": "4",
-      "prompt": "绝对路径是文件名的完整路径；相对路径是指相对当前网页文件名的路径。（ ）\n判断题-JSP 基础、指令及动作",
+      "prompt": "绝对路径是文件名的完整路径；相对路径是指相对当前网页文件名的路径。（ ）",
       "options": [],
       "answer": "T",
       "answerText": "",
@@ -4548,7 +4565,7 @@
       "subject": "Web应用开发",
       "type": "true_false",
       "number": "13",
-      "prompt": "Page 指令不能定义当前 JSP 程序的全局属性。（ ）\n判断题-JSP 内置对象",
+      "prompt": "Page 指令不能定义当前 JSP 程序的全局属性。（ ）",
       "options": [],
       "answer": "F",
       "answerText": "",
@@ -4646,7 +4663,7 @@
       "subject": "Web应用开发",
       "type": "true_false",
       "number": "20",
-      "prompt": "session 对象可以用来保存用户会话期间需要保存的数据信息。（ ）\n判断题-JavaBean",
+      "prompt": "session 对象可以用来保存用户会话期间需要保存的数据信息。（ ）",
       "options": [],
       "answer": "T",
       "answerText": "",
@@ -4744,7 +4761,7 @@
       "subject": "Web应用开发",
       "type": "true_false",
       "number": "27",
-      "prompt": "布置 JavaBean 须在 Web 服务目录的 WEB-INF\\classes 子目录下建立与包名对应的子\n目录，并将字节文件复制到该目录。（ ）\n判断题-Servlet",
+      "prompt": "布置 JavaBean 须在 Web 服务目录的 WEB-INF\\classes 子目录下建立与包名对应的子\n目录，并将字节文件复制到该目录。（ ）",
       "options": [],
       "answer": "T",
       "answerText": "",
@@ -4898,7 +4915,7 @@
       "subject": "Web应用开发",
       "type": "true_false",
       "number": "38",
-      "prompt": "重定向功能是将用户从当前页面或 Servlet 定向到另一个 JSP 页面或 Servlet。（ ）\n判断题-JDBC",
+      "prompt": "重定向功能是将用户从当前页面或 Servlet 定向到另一个 JSP 页面或 Servlet。（ ）",
       "options": [],
       "answer": "T",
       "answerText": "",
@@ -6683,10 +6700,27 @@
       "subject": "数据库原理及应用",
       "type": "choice",
       "number": "22",
-      "prompt": "MySQL服务的默认端口号是（）。\n3306\n1433\n8080\n1521",
-      "options": [],
+      "prompt": "MySQL服务的默认端口号是（）。",
+      "options": [
+        {
+          "key": "A",
+          "text": "3306"
+        },
+        {
+          "key": "B",
+          "text": "1433"
+        },
+        {
+          "key": "C",
+          "text": "8080"
+        },
+        {
+          "key": "D",
+          "text": "1521"
+        }
+      ],
       "answer": "A",
-      "answerText": "",
+      "answerText": "A. 3306",
       "explanation": "",
       "status": "verified",
       "answerSource": "题干内答案标记",
@@ -7735,10 +7769,27 @@
       "subject": "数据库原理及应用",
       "type": "choice",
       "number": "57",
-      "prompt": "下列说法错误的是（）\nMySQL支持多种Unicode字符集\nMySQL不支持Unicode字符集\nUnicode编码有利于支持跨语言跨平台转换\nGBK字符集不兼容Unicode",
-      "options": [],
+      "prompt": "下列说法错误的是（）",
+      "options": [
+        {
+          "key": "A",
+          "text": "MySQL支持多种Unicode字符集"
+        },
+        {
+          "key": "B",
+          "text": "MySQL不支持Unicode字符集"
+        },
+        {
+          "key": "C",
+          "text": "Unicode编码有利于支持跨语言跨平台转换"
+        },
+        {
+          "key": "D",
+          "text": "GBK字符集不兼容Unicode"
+        }
+      ],
       "answer": "B",
-      "answerText": "",
+      "answerText": "B. MySQL不支持Unicode字符集",
       "explanation": "",
       "status": "verified",
       "answerSource": "题干内答案标记",
@@ -7811,10 +7862,27 @@
       "subject": "数据库原理及应用",
       "type": "choice",
       "number": "60",
-      "prompt": "将年龄字段限制在某个取值范围，应定义（）约束。\nCHECK\nUNIQUE\nPRIMARY KEY\nFOREIGN KEY",
-      "options": [],
+      "prompt": "将年龄字段限制在某个取值范围，应定义（）约束。",
+      "options": [
+        {
+          "key": "A",
+          "text": "CHECK"
+        },
+        {
+          "key": "B",
+          "text": "UNIQUE"
+        },
+        {
+          "key": "C",
+          "text": "PRIMARY KEY"
+        },
+        {
+          "key": "D",
+          "text": "FOREIGN KEY"
+        }
+      ],
       "answer": "A",
-      "answerText": "",
+      "answerText": "A. CHECK",
       "explanation": "",
       "status": "verified",
       "answerSource": "题干内答案标记",
@@ -7825,10 +7893,27 @@
       "subject": "数据库原理及应用",
       "type": "choice",
       "number": "61",
-      "prompt": "将性别字段设置为仅允许‘男’和‘女’两种取值，应定义（）约束。\nCHECK\nUNIQUE\nPRIMARY KEY\nFOREIGN KEY",
-      "options": [],
+      "prompt": "将性别字段设置为仅允许“男”和“女”两种取值，应定义（）约束。",
+      "options": [
+        {
+          "key": "A",
+          "text": "CHECK"
+        },
+        {
+          "key": "B",
+          "text": "UNIQUE"
+        },
+        {
+          "key": "C",
+          "text": "PRIMARY KEY"
+        },
+        {
+          "key": "D",
+          "text": "FOREIGN KEY"
+        }
+      ],
       "answer": "A",
-      "answerText": "",
+      "answerText": "A. CHECK",
       "explanation": "",
       "status": "verified",
       "answerSource": "题干内答案标记",
@@ -7839,10 +7924,27 @@
       "subject": "数据库原理及应用",
       "type": "choice",
       "number": "62",
-      "prompt": "下列关于ALTER TABLE语句描述错误的是（）。\nALTER TABLE语句可以添加字段\nALTER TABLE语句可以删除字段\nALTER TABLE语句不能修改字段名称\nALTER TABLE语句可以修改字段的数据类型",
-      "options": [],
+      "prompt": "下列关于ALTER TABLE语句描述错误的是（）。",
+      "options": [
+        {
+          "key": "A",
+          "text": "ALTER TABLE语句可以添加字段"
+        },
+        {
+          "key": "B",
+          "text": "ALTER TABLE语句可以删除字段"
+        },
+        {
+          "key": "C",
+          "text": "ALTER TABLE语句不能修改字段名称"
+        },
+        {
+          "key": "D",
+          "text": "ALTER TABLE语句可以修改字段的数据类型"
+        }
+      ],
       "answer": "C",
-      "answerText": "",
+      "answerText": "C. ALTER TABLE语句不能修改字段名称",
       "explanation": "",
       "status": "verified",
       "answerSource": "题干内答案标记",
@@ -7853,10 +7955,27 @@
       "subject": "数据库原理及应用",
       "type": "choice",
       "number": "63",
-      "prompt": "若要删除数据库中已经存在的表S，可以执行（）。\nDELETE TABLE S\nDELETE S\nDROP TABLE S\nDROP S",
-      "options": [],
+      "prompt": "若要删除数据库中已经存在的表S，可以执行（）。",
+      "options": [
+        {
+          "key": "A",
+          "text": "DELETE TABLE S"
+        },
+        {
+          "key": "B",
+          "text": "DELETE S"
+        },
+        {
+          "key": "C",
+          "text": "DROP TABLE S"
+        },
+        {
+          "key": "D",
+          "text": "DROP S"
+        }
+      ],
       "answer": "C",
-      "answerText": "",
+      "answerText": "C. DROP TABLE S",
       "explanation": "",
       "status": "verified",
       "answerSource": "题干内答案标记",
@@ -7867,10 +7986,27 @@
       "subject": "数据库原理及应用",
       "type": "choice",
       "number": "64",
-      "prompt": "若要删除数据库中的视图v，可以执行（）。\nDELETE VIEW v\nDELETE v\nDROP VIEW v\nDROP v",
-      "options": [],
+      "prompt": "若要删除数据库中的视图v，可以执行（）。",
+      "options": [
+        {
+          "key": "A",
+          "text": "DELETE VIEW v"
+        },
+        {
+          "key": "B",
+          "text": "DELETE v"
+        },
+        {
+          "key": "C",
+          "text": "DROP VIEW v"
+        },
+        {
+          "key": "D",
+          "text": "DROP v"
+        }
+      ],
       "answer": "C",
-      "answerText": "",
+      "answerText": "C. DROP VIEW v",
       "explanation": "",
       "status": "verified",
       "answerSource": "题干内答案标记",
@@ -7881,10 +8017,27 @@
       "subject": "数据库原理及应用",
       "type": "choice",
       "number": "65",
-      "prompt": "若要删除数据库tb，可以执行（）。\nDELETE DATABASE tb\nDELETE tb\nDROP DATABASE tb\nDROP tb",
-      "options": [],
+      "prompt": "若要删除数据库tb，可以执行（）。",
+      "options": [
+        {
+          "key": "A",
+          "text": "DELETE DATABASE tb"
+        },
+        {
+          "key": "B",
+          "text": "DELETE tb"
+        },
+        {
+          "key": "C",
+          "text": "DROP DATABASE tb"
+        },
+        {
+          "key": "D",
+          "text": "DROP tb"
+        }
+      ],
       "answer": "C",
-      "answerText": "",
+      "answerText": "C. DROP DATABASE tb",
       "explanation": "",
       "status": "verified",
       "answerSource": "题干内答案标记",
@@ -7895,10 +8048,27 @@
       "subject": "数据库原理及应用",
       "type": "choice",
       "number": "66",
-      "prompt": "66. 下列关于数据库索引的说法，错误的是（）\n索引可以显著提高查询效率\n索引会降低插入、更新、删除数据的性能\n一个表只能创建一个索引\n主键列默认会自动创建索引",
-      "options": [],
+      "prompt": "下列关于数据库索引的说法，错误的是（）",
+      "options": [
+        {
+          "key": "A",
+          "text": "索引可以显著提高查询效率"
+        },
+        {
+          "key": "B",
+          "text": "索引会降低插入、更新、删除数据的性能"
+        },
+        {
+          "key": "C",
+          "text": "一个表只能创建一个索引"
+        },
+        {
+          "key": "D",
+          "text": "主键列默认会自动创建索引"
+        }
+      ],
       "answer": "C",
-      "answerText": "",
+      "answerText": "C. 一个表只能创建一个索引",
       "explanation": "",
       "status": "verified",
       "answerSource": "题干内答案标记",
@@ -7909,10 +8079,27 @@
       "subject": "数据库原理及应用",
       "type": "choice",
       "number": "67",
-      "prompt": "67. 下列关于数据库视图的说法，正确的是（）\n视图中实际存储了真实数据\n视图可以简化复杂查询，隐藏部分字段\n对视图的查询一定比直接查表更快\n任何视图都可以随意执行 UPDATE 操作",
-      "options": [],
+      "prompt": "下列关于数据库视图的说法，正确的是（）",
+      "options": [
+        {
+          "key": "A",
+          "text": "视图中实际存储了真实数据"
+        },
+        {
+          "key": "B",
+          "text": "视图可以简化复杂查询，隐藏部分字段"
+        },
+        {
+          "key": "C",
+          "text": "对视图的查询一定比直接查表更快"
+        },
+        {
+          "key": "D",
+          "text": "任何视图都可以随意执行 UPDATE 操作"
+        }
+      ],
       "answer": "B",
-      "answerText": "",
+      "answerText": "B. 视图可以简化复杂查询，隐藏部分字段",
       "explanation": "",
       "status": "verified",
       "answerSource": "题干内答案标记",
@@ -7923,10 +8110,27 @@
       "subject": "数据库原理及应用",
       "type": "choice",
       "number": "68",
-      "prompt": "68. 下列操作中，无法直接通过视图实现的是（）\n查询数据\n限制用户只能查看部分列\n永久存储大量原始数据\n基于多张表创建一个虚拟表",
-      "options": [],
+      "prompt": "下列操作中，无法直接通过视图实现的是（）",
+      "options": [
+        {
+          "key": "A",
+          "text": "查询数据"
+        },
+        {
+          "key": "B",
+          "text": "限制用户只能查看部分列"
+        },
+        {
+          "key": "C",
+          "text": "永久存储大量原始数据"
+        },
+        {
+          "key": "D",
+          "text": "基于多张表创建一个虚拟表"
+        }
+      ],
       "answer": "C",
-      "answerText": "",
+      "answerText": "C. 永久存储大量原始数据",
       "explanation": "",
       "status": "verified",
       "answerSource": "题干内答案标记",
@@ -7937,10 +8141,27 @@
       "subject": "数据库原理及应用",
       "type": "choice",
       "number": "69",
-      "prompt": "69. 下列关于存储过程的描述，错误的是（）\n存储过程编译后可重复执行，提高效率\n存储过程可以封装多条 SQL 语句\n存储过程必须每次执行都重新编译\n存储过程可以接收输入参数",
-      "options": [],
+      "prompt": "下列关于存储过程的描述，错误的是（）",
+      "options": [
+        {
+          "key": "A",
+          "text": "存储过程编译后可重复执行，提高效率"
+        },
+        {
+          "key": "B",
+          "text": "存储过程可以封装多条 SQL 语句"
+        },
+        {
+          "key": "C",
+          "text": "存储过程必须每次执行都重新编译"
+        },
+        {
+          "key": "D",
+          "text": "存储过程可以接收输入参数"
+        }
+      ],
       "answer": "C",
-      "answerText": "",
+      "answerText": "C. 存储过程必须每次执行都重新编译",
       "explanation": "",
       "status": "verified",
       "answerSource": "题干内答案标记",
@@ -7951,10 +8172,27 @@
       "subject": "数据库原理及应用",
       "type": "choice",
       "number": "70",
-      "prompt": "70. 使用存储过程的主要优点不包括（）\n减少网络传输\n简化复杂业务逻辑调用\n永久保存业务数据\n提高代码复用性",
-      "options": [],
+      "prompt": "使用存储过程的主要优点不包括（）",
+      "options": [
+        {
+          "key": "A",
+          "text": "减少网络传输"
+        },
+        {
+          "key": "B",
+          "text": "简化复杂业务逻辑调用"
+        },
+        {
+          "key": "C",
+          "text": "永久保存业务数据"
+        },
+        {
+          "key": "D",
+          "text": "提高代码复用性"
+        }
+      ],
       "answer": "C",
-      "answerText": "",
+      "answerText": "C. 永久保存业务数据",
       "explanation": "",
       "status": "verified",
       "answerSource": "题干内答案标记",
@@ -7965,10 +8203,27 @@
       "subject": "数据库原理及应用",
       "type": "choice",
       "number": "71",
-      "prompt": "71. 下列关于触发器的描述，正确的是（）\n触发器需要手动调用才能执行\n触发器由增、删、改操作自动触发\n触发器只能作用于查询语句\n触发器会永久存储业务数据",
-      "options": [],
+      "prompt": "下列关于触发器的描述，正确的是（）",
+      "options": [
+        {
+          "key": "A",
+          "text": "触发器需要手动调用才能执行"
+        },
+        {
+          "key": "B",
+          "text": "触发器由增、删、改操作自动触发"
+        },
+        {
+          "key": "C",
+          "text": "触发器只能作用于查询语句"
+        },
+        {
+          "key": "D",
+          "text": "触发器会永久存储业务数据"
+        }
+      ],
       "answer": "B",
-      "answerText": "",
+      "answerText": "B. 触发器由增、删、改操作自动触发",
       "explanation": "",
       "status": "verified",
       "answerSource": "题干内答案标记",
@@ -7979,10 +8234,27 @@
       "subject": "数据库原理及应用",
       "type": "choice",
       "number": "72",
-      "prompt": "72. 下列操作中，通常不能触发触发器的是（）\nINSERT\nUPDATE\nDELETE\nSELECT",
-      "options": [],
+      "prompt": "下列操作中，通常不能触发触发器的是（）",
+      "options": [
+        {
+          "key": "A",
+          "text": "INSERT"
+        },
+        {
+          "key": "B",
+          "text": "UPDATE"
+        },
+        {
+          "key": "C",
+          "text": "DELETE"
+        },
+        {
+          "key": "D",
+          "text": "SELECT"
+        }
+      ],
       "answer": "D",
-      "answerText": "",
+      "answerText": "D. SELECT",
       "explanation": "",
       "status": "verified",
       "answerSource": "题干内答案标记",
@@ -7993,10 +8265,27 @@
       "subject": "数据库原理及应用",
       "type": "choice",
       "number": "73",
-      "prompt": "73. 满足第一范式（1NF）的核心要求是（）\n消除非主属性对主键的部分函数依赖\n每个属性都是不可再分的原子值\n消除非主属性对主键的传递函数依赖\n消除多值依赖",
-      "options": [],
+      "prompt": "满足第一范式（1NF）的核心要求是（）",
+      "options": [
+        {
+          "key": "A",
+          "text": "消除非主属性对主键的部分函数依赖"
+        },
+        {
+          "key": "B",
+          "text": "每个属性都是不可再分的原子值"
+        },
+        {
+          "key": "C",
+          "text": "消除非主属性对主键的传递函数依赖"
+        },
+        {
+          "key": "D",
+          "text": "消除多值依赖"
+        }
+      ],
       "answer": "B",
-      "answerText": "",
+      "answerText": "B. 每个属性都是不可再分的原子值",
       "explanation": "",
       "status": "verified",
       "answerSource": "题干内答案标记",
@@ -8007,10 +8296,27 @@
       "subject": "数据库原理及应用",
       "type": "choice",
       "number": "74",
-      "prompt": "74. 下列关于第三范式（3NF）的说法，正确的是（）\n允许存在部分依赖\n不允许非主属性之间存在传递依赖\n必须先满足 BCNF 才能满足 3NF\n字段可以包含多个值用逗号分隔",
-      "options": [],
+      "prompt": "下列关于第三范式（3NF）的说法，正确的是（）",
+      "options": [
+        {
+          "key": "A",
+          "text": "允许存在部分依赖"
+        },
+        {
+          "key": "B",
+          "text": "不允许非主属性之间存在传递依赖"
+        },
+        {
+          "key": "C",
+          "text": "必须先满足 BCNF 才能满足 3NF"
+        },
+        {
+          "key": "D",
+          "text": "字段可以包含多个值用逗号分隔"
+        }
+      ],
       "answer": "B",
-      "answerText": "",
+      "answerText": "B. 不允许非主属性之间存在传递依赖",
       "explanation": "",
       "status": "verified",
       "answerSource": "题干内答案标记",
@@ -8021,10 +8327,27 @@
       "subject": "数据库原理及应用",
       "type": "choice",
       "number": "75",
-      "prompt": "75. 满足第二范式（2NF）的前提是已经满足第一范式，并且在此基础上必须满足（）\n消除非主属性对主键的部分函数依赖\n消除非主属性对主键的传递函数依赖\n所有字段都是不可再分的原子值\n消除多值依赖",
-      "options": [],
+      "prompt": "满足第二范式（2NF）的前提是已经满足第一范式，并且在此基础上必须满足（）",
+      "options": [
+        {
+          "key": "A",
+          "text": "消除非主属性对主键的部分函数依赖"
+        },
+        {
+          "key": "B",
+          "text": "消除非主属性对主键的传递函数依赖"
+        },
+        {
+          "key": "C",
+          "text": "所有字段都是不可再分的原子值"
+        },
+        {
+          "key": "D",
+          "text": "消除多值依赖"
+        }
+      ],
       "answer": "A",
-      "answerText": "",
+      "answerText": "A. 消除非主属性对主键的部分函数依赖",
       "explanation": "",
       "status": "verified",
       "answerSource": "题干内答案标记",
@@ -16195,11 +16518,23 @@
       "options": [
         {
           "key": "A",
-          "text": "UML顺序图 B. UML类图 C. UML活动图 D. UML构件图"
+          "text": "UML顺序图"
+        },
+        {
+          "key": "B",
+          "text": "UML类图"
+        },
+        {
+          "key": "C",
+          "text": "UML活动图"
+        },
+        {
+          "key": "D",
+          "text": "UML构件图"
         }
       ],
       "answer": "A",
-      "answerText": "A. UML顺序图 B. UML类图 C. UML活动图 D. UML构件图",
+      "answerText": "A. UML顺序图",
       "explanation": "",
       "status": "verified",
       "answerSource": "Word 红色答案标注",
@@ -27657,7 +27992,7 @@
         },
         {
           "key": "C",
-          "text": "AndroidMainifest.xml"
+          "text": "AndroidManifest.xml"
         },
         {
           "key": "D",
@@ -27665,7 +28000,7 @@
         }
       ],
       "answer": "C",
-      "answerText": "C. AndroidMainifest.xml",
+      "answerText": "C. AndroidManifest.xml",
       "explanation": "",
       "status": "verified",
       "answerSource": "正确答案行",
@@ -28052,23 +28387,23 @@
       "options": [
         {
           "key": "A",
-          "text": "onCreate(),onStart(),onDestory(),onrestart(),onresume(),onpause(),onstop()"
+          "text": "onCreate(), onStart(), onDestroy(), onRestart(), onResume(), onPause(), onStop()"
         },
         {
           "key": "B",
-          "text": "onCreateView(),onStart(),onDestory(),onrestart(),onresume(),onpause(),onstop()"
+          "text": "onCreateView(), onStart(), onDestroy(), onRestart(), onResume(), onPause(), onStop()"
         },
         {
           "key": "C",
-          "text": "onCreateView(),onStart(),onDestory(),onrestart(),onresume(),onstop()"
+          "text": "onCreateView(), onStart(), onDestroy(), onRestart(), onResume(), onStop()"
         },
         {
           "key": "D",
-          "text": "onCreateView(),onStart(),onrestart(),onresume(),onpause(),onstop()。"
+          "text": "onCreateView(), onStart(), onRestart(), onResume(), onPause(), onStop()"
         }
       ],
       "answer": "A",
-      "answerText": "A. onCreate(),onStart(),onDestory(),onrestart(),onresume(),onpause(),onstop()",
+      "answerText": "A. onCreate(), onStart(), onDestroy(), onRestart(), onResume(), onPause(), onStop()",
       "explanation": "",
       "status": "verified",
       "answerSource": "正确答案行",
@@ -29044,23 +29379,23 @@
       "options": [
         {
           "key": "A",
-          "text": "通过 startService()启动服务，会调用如下生命周期方法：onCreate()----\n>onStart()---->onDestory()"
+          "text": "通过 startService() 启动服务，会调用如下生命周期方法：onCreate() -> onStart() -> onDestroy()"
         },
         {
           "key": "B",
-          "text": "当采用 startService()方法启动服务，访问者与服务之间是没有绑定在一起的，\n访问者退出，服务还在运行"
+          "text": "当采用 startService() 方法启动服务，访问者与服务之间是没有绑定在一起的，访问者退出，服务还在运行"
         },
         {
           "key": "C",
-          "text": "如果是调用 bindService()启动服务，会调用如下生命周期方法：onCreate()----\n>onBind---->onDestory()---->onUnBind()"
+          "text": "如果是调用 bindService() 启动服务，会调用如下生命周期方法：onCreate() -> onBind() -> onDestroy() -> onUnbind()"
         },
         {
           "key": "D",
-          "text": "采用 bindService()方法启动服务时，访问者与服务是绑定在一起的，即访问者\n退出，服务也就终止，解除绑定"
+          "text": "采用 bindService() 方法启动服务时，访问者与服务是绑定在一起的，即访问者退出，服务也就终止，解除绑定"
         }
       ],
       "answer": "C",
-      "answerText": "C. 如果是调用 bindService()启动服务，会调用如下生命周期方法：onCreate()----\n>onBind---->onDestory()---->onUnBind()",
+      "answerText": "C. 如果是调用 bindService() 启动服务，会调用如下生命周期方法：onCreate() -> onBind() -> onDestroy() -> onUnbind()",
       "explanation": "",
       "status": "verified",
       "answerSource": "正确答案行",
@@ -33220,27 +33555,33 @@
       "options": [
         {
           "key": "A",
-          "text": ""
+          "text": "见图 A"
         },
         {
           "key": "B",
-          "text": ""
+          "text": "见图 B"
         },
         {
           "key": "C",
-          "text": ""
+          "text": "见图 C"
         },
         {
           "key": "D",
-          "text": ""
+          "text": "见图 D"
         }
       ],
       "answer": "D",
-      "answerText": "D. ",
+      "answerText": "D. 见图 D",
       "explanation": "",
       "status": "verified",
       "answerSource": "题干末尾答案标记",
-      "sourceFile": "面向对象分析与设计 复习资料(2).pdf"
+      "sourceFile": "面向对象分析与设计 复习资料(2).pdf",
+      "images": [
+        {
+          "src": "assets/object-oriented/q1517.png",
+          "alt": "活动图活动符号选项"
+        }
+      ]
     },
     {
       "id": "q1518",
@@ -33375,27 +33716,33 @@
       "options": [
         {
           "key": "A",
-          "text": ""
+          "text": "见图 A"
         },
         {
           "key": "B",
-          "text": ""
+          "text": "见图 B"
         },
         {
           "key": "C",
-          "text": ""
+          "text": "见图 C"
         },
         {
           "key": "D",
-          "text": ""
+          "text": "见图 D"
         }
       ],
       "answer": "B",
-      "answerText": "B. ",
+      "answerText": "B. 见图 B",
       "explanation": "",
       "status": "verified",
       "answerSource": "题干末尾答案标记",
-      "sourceFile": "面向对象分析与设计 复习资料(2).pdf"
+      "sourceFile": "面向对象分析与设计 复习资料(2).pdf",
+      "images": [
+        {
+          "src": "assets/object-oriented/q1522.png",
+          "alt": "活动图决策节点符号选项"
+        }
+      ]
     },
     {
       "id": "q1523",
@@ -33914,27 +34261,33 @@
       "options": [
         {
           "key": "A",
-          "text": ""
+          "text": "见图 A"
         },
         {
           "key": "B",
-          "text": ""
+          "text": "见图 B"
         },
         {
           "key": "C",
-          "text": ""
+          "text": "见图 C"
         },
         {
           "key": "D",
-          "text": ""
+          "text": "见图 D"
         }
       ],
       "answer": "D",
-      "answerText": "D. ",
+      "answerText": "D. 见图 D",
       "explanation": "",
       "status": "verified",
       "answerSource": "题干末尾答案标记",
-      "sourceFile": "面向对象分析与设计 复习资料(2).pdf"
+      "sourceFile": "面向对象分析与设计 复习资料(2).pdf",
+      "images": [
+        {
+          "src": "assets/object-oriented/q1543.png",
+          "alt": "用例包含扩展泛化关系选项"
+        }
+      ]
     },
     {
       "id": "q1544",
@@ -33945,27 +34298,33 @@
       "options": [
         {
           "key": "A",
-          "text": ""
+          "text": "见图 A"
         },
         {
           "key": "B",
-          "text": ""
+          "text": "见图 B"
         },
         {
           "key": "C",
-          "text": ""
+          "text": "见图 C"
         },
         {
           "key": "D",
-          "text": ""
+          "text": "见图 D"
         }
       ],
       "answer": "A",
-      "answerText": "A. ",
+      "answerText": "A. 见图 A",
       "explanation": "",
       "status": "verified",
       "answerSource": "题干空括号后答案标记",
-      "sourceFile": "面向对象分析与设计 复习资料(2).pdf"
+      "sourceFile": "面向对象分析与设计 复习资料(2).pdf",
+      "images": [
+        {
+          "src": "assets/object-oriented/q1544.png",
+          "alt": "客户数据更新用例图选项"
+        }
+      ]
     },
     {
       "id": "q1545",
@@ -34774,7 +35133,13 @@
       "explanation": "",
       "status": "verified",
       "answerSource": "题干末尾答案标记",
-      "sourceFile": "面向对象分析与设计 复习资料(2).pdf"
+      "sourceFile": "面向对象分析与设计 复习资料(2).pdf",
+      "images": [
+        {
+          "src": "assets/object-oriented/q1574.png",
+          "alt": "首次迭代用例图"
+        }
+      ]
     },
     {
       "id": "q1575",
@@ -34805,7 +35170,13 @@
       "explanation": "",
       "status": "verified",
       "answerSource": "题干末尾答案标记",
-      "sourceFile": "面向对象分析与设计 复习资料(2).pdf"
+      "sourceFile": "面向对象分析与设计 复习资料(2).pdf",
+      "images": [
+        {
+          "src": "assets/object-oriented/q1575.png",
+          "alt": "淘汰赛比赛结果跟踪类模型"
+        }
+      ]
     },
     {
       "id": "q1576",
@@ -34971,27 +35342,33 @@
       "options": [
         {
           "key": "A",
-          "text": ""
+          "text": "见图 A"
         },
         {
           "key": "B",
-          "text": ""
+          "text": "见图 B"
         },
         {
           "key": "C",
-          "text": ""
+          "text": "见图 C"
         },
         {
           "key": "D",
-          "text": ""
+          "text": "见图 D"
         }
       ],
       "answer": "C",
-      "answerText": "C. ",
+      "answerText": "C. 见图 C",
       "explanation": "",
       "status": "verified",
       "answerSource": "题干末尾答案标记",
-      "sourceFile": "面向对象分析与设计 复习资料(2).pdf"
+      "sourceFile": "面向对象分析与设计 复习资料(2).pdf",
+      "images": [
+        {
+          "src": "assets/object-oriented/q1581.png",
+          "alt": "继承关系符号选项"
+        }
+      ]
     },
     {
       "id": "q1582",
@@ -35033,27 +35410,33 @@
       "options": [
         {
           "key": "A",
-          "text": ""
+          "text": "见图 A"
         },
         {
           "key": "B",
-          "text": ""
+          "text": "见图 B"
         },
         {
           "key": "C",
-          "text": ""
+          "text": "见图 C"
         },
         {
           "key": "D",
-          "text": ""
+          "text": "见图 D"
         }
       ],
       "answer": "D",
-      "answerText": "D. ",
+      "answerText": "D. 见图 D",
       "explanation": "",
       "status": "verified",
       "answerSource": "题干末尾答案标记",
-      "sourceFile": "面向对象分析与设计 复习资料(2).pdf"
+      "sourceFile": "面向对象分析与设计 复习资料(2).pdf",
+      "images": [
+        {
+          "src": "assets/object-oriented/q1583.png",
+          "alt": "聚合关系符号选项"
+        }
+      ]
     },
     {
       "id": "q1584",
@@ -35784,7 +36167,7 @@
       "subject": "面向对象分析与设计",
       "type": "choice",
       "number": "45",
-      "prompt": "在 UML 语言中，下图中的 a、b、c 三种图形符号按照顺序分别表示 （） 。\na b c",
+      "prompt": "在 UML 语言中，下图中的 a、b、c 三种图形符号按照顺序分别表示 （） 。",
       "options": [
         {
           "key": "A",
@@ -35808,7 +36191,13 @@
       "explanation": "",
       "status": "verified",
       "answerSource": "题干内答案标记",
-      "sourceFile": "面向对象分析与设计 复习资料(2).pdf"
+      "sourceFile": "面向对象分析与设计 复习资料(2).pdf",
+      "images": [
+        {
+          "src": "assets/object-oriented/q1611.png",
+          "alt": "UML 控制对象、实体对象、边界对象符号"
+        }
+      ]
     },
     {
       "id": "q1612",
@@ -37124,27 +37513,33 @@
       "options": [
         {
           "key": "A",
-          "text": ""
+          "text": "见图 A"
         },
         {
           "key": "B",
-          "text": ""
+          "text": "见图 B"
         },
         {
           "key": "C",
-          "text": ""
+          "text": "见图 C"
         },
         {
           "key": "D",
-          "text": ""
+          "text": "见图 D"
         }
       ],
       "answer": "B",
-      "answerText": "B. ",
+      "answerText": "B. 见图 B",
       "explanation": "",
       "status": "verified",
       "answerSource": "题干末尾答案标记",
-      "sourceFile": "面向对象分析与设计 复习资料(2).pdf"
+      "sourceFile": "面向对象分析与设计 复习资料(2).pdf",
+      "images": [
+        {
+          "src": "assets/object-oriented/q1658.png",
+          "alt": "构架包图循环依赖选项"
+        }
+      ]
     },
     {
       "id": "q1659",
@@ -37631,27 +38026,33 @@
       "options": [
         {
           "key": "A",
-          "text": ""
+          "text": "见图 A"
         },
         {
           "key": "B",
-          "text": ""
+          "text": "见图 B"
         },
         {
           "key": "C",
-          "text": ""
+          "text": "见图 C"
         },
         {
           "key": "D",
-          "text": ""
+          "text": "见图 D"
         }
       ],
       "answer": "A",
-      "answerText": "A. ",
+      "answerText": "A. 见图 A",
       "explanation": "",
       "status": "verified",
       "answerSource": "题干末尾答案标记",
-      "sourceFile": "面向对象分析与设计 复习资料(2).pdf"
+      "sourceFile": "面向对象分析与设计 复习资料(2).pdf",
+      "images": [
+        {
+          "src": "assets/object-oriented/q1674.png",
+          "alt": "包图符号选项"
+        }
+      ]
     },
     {
       "id": "q1675",
@@ -37759,27 +38160,33 @@
       "options": [
         {
           "key": "A",
-          "text": ""
+          "text": "见图 A"
         },
         {
           "key": "B",
-          "text": ""
+          "text": "见图 B"
         },
         {
           "key": "C",
-          "text": ""
+          "text": "见图 C"
         },
         {
           "key": "D",
-          "text": ""
+          "text": "见图 D"
         }
       ],
       "answer": "C",
-      "answerText": "C. ",
+      "answerText": "C. 见图 C",
       "explanation": "",
       "status": "verified",
       "answerSource": "题干末尾答案标记",
-      "sourceFile": "面向对象分析与设计 复习资料(2).pdf"
+      "sourceFile": "面向对象分析与设计 复习资料(2).pdf",
+      "images": [
+        {
+          "src": "assets/object-oriented/q1678.png",
+          "alt": "部署图节点符号选项"
+        }
+      ]
     },
     {
       "id": "q1679",
@@ -37929,7 +38336,13 @@
       "explanation": "",
       "status": "verified",
       "answerSource": "题干末尾答案标记",
-      "sourceFile": "面向对象分析与设计 复习资料(2).pdf"
+      "sourceFile": "面向对象分析与设计 复习资料(2).pdf",
+      "images": [
+        {
+          "src": "assets/object-oriented/q1686.png",
+          "alt": "类图分包分割点"
+        }
+      ]
     },
     {
       "id": "q1687",
@@ -38904,27 +39317,33 @@
       "options": [
         {
           "key": "A",
-          "text": ""
+          "text": "见图 A"
         },
         {
           "key": "B",
-          "text": ""
+          "text": "见图 B"
         },
         {
           "key": "C",
-          "text": ""
+          "text": "见图 C"
         },
         {
           "key": "D",
-          "text": ""
+          "text": "见图 D"
         }
       ],
       "answer": "C",
-      "answerText": "C. ",
+      "answerText": "C. 见图 C",
       "explanation": "",
       "status": "verified",
       "answerSource": "题干末尾答案标记",
-      "sourceFile": "面向对象分析与设计 复习资料(2).pdf"
+      "sourceFile": "面向对象分析与设计 复习资料(2).pdf",
+      "images": [
+        {
+          "src": "assets/object-oriented/q1722.png",
+          "alt": "状态机图初态符号选项"
+        }
+      ]
     },
     {
       "id": "q1723",
@@ -39018,7 +39437,13 @@
       "explanation": "",
       "status": "verified",
       "answerSource": "题干末尾答案标记",
-      "sourceFile": "面向对象分析与设计 复习资料(2).pdf"
+      "sourceFile": "面向对象分析与设计 复习资料(2).pdf",
+      "images": [
+        {
+          "src": "assets/object-oriented/q1726.png",
+          "alt": "订单与订单项类图"
+        }
+      ]
     },
     {
       "id": "q1727",
@@ -39041,31 +39466,21 @@
         },
         {
           "key": "D",
-          "text": "仓库类的自反关联意味着每个仓库对象之间存在着自反链接\n1（. ）是指按照软件开发的基本过程，将抽象层次较高的模型转换为相对具体的模型的过程。\nA"
-        },
-        {
-          "key": "A",
-          "text": "正向工程"
-        },
-        {
-          "key": "B",
-          "text": "逆向工程"
-        },
-        {
-          "key": "C",
-          "text": "反向工程"
-        },
-        {
-          "key": "D",
-          "text": "系统工程"
+          "text": "仓库类的自反关联意味着每个仓库对象之间存在着自反链接"
         }
       ],
       "answer": "D",
-      "answerText": "D. 系统工程",
+      "answerText": "D. 仓库类的自反关联意味着每个仓库对象之间存在着自反链接",
       "explanation": "",
       "status": "verified",
       "answerSource": "题干末尾答案标记",
-      "sourceFile": "面向对象分析与设计 复习资料(2).pdf"
+      "sourceFile": "面向对象分析与设计 复习资料(2).pdf",
+      "images": [
+        {
+          "src": "assets/object-oriented/q1727.png",
+          "alt": "仓库订单商品类图"
+        }
+      ]
     },
     {
       "id": "q1728",

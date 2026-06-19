@@ -1,7 +1,6 @@
 const bank = window.QUESTION_BANK || { questions: [] };
 const questions = bank.questions || [];
 const questionById = new Map(questions.map((q) => [q.id, q]));
-const knowledgeBank = window.QUESTION_KNOWLEDGE || { items: {}, subjects: {} };
 
 const typeLabels = {
   choice: "单选",
@@ -131,8 +130,6 @@ const els = {
   clearSubjectBtn: document.querySelector("#clearSubjectBtn"),
   openSubjectWrongBookBtn: document.querySelector("#openSubjectWrongBookBtn"),
   continueStudyBtn: document.querySelector("#continueStudyBtn"),
-  knowledgeOverview: document.querySelector("#knowledgeOverview"),
-  knowledgeOverviewList: document.querySelector("#knowledgeOverviewList"),
   studySubject: document.querySelector("#studySubject"),
   studyCount: document.querySelector("#studyCount"),
   practiceStats: document.querySelector("#practiceStats"),
@@ -264,10 +261,6 @@ function countTypes(items) {
   }, {});
 }
 
-function questionKnowledge(q) {
-  return knowledgeBank.items?.[q.id] || null;
-}
-
 function readableAnswer(q) {
   if (!q.answer) return "资料中未识别到答案";
   if (q.answer === "T") return "T  正确";
@@ -333,7 +326,7 @@ function renderPrompt(target, text, terms, q, revealAnswer = false) {
     }
     const span = document.createElement("span");
     span.textContent = fragment;
-    if (termSet.has(fragment)) span.className = "memory-highlight";
+    if (termSet.has(fragment)) span.className = "keyword-highlight";
     target.append(span);
   }
 
@@ -444,44 +437,6 @@ function createBadge(text, className) {
   badge.className = `badge ${className}`;
   badge.textContent = text;
   return badge;
-}
-
-function renderKnowledgeOverview() {
-  const rows = knowledgeBank.subjects?.[state.subject] || [];
-  els.knowledgeOverview.hidden = !rows.length;
-  els.knowledgeOverviewList.textContent = "";
-  if (!rows.length) return;
-
-  const fragment = document.createDocumentFragment();
-  for (const row of rows) {
-    const item = document.createElement("section");
-    item.className = "knowledge-topic-card";
-
-    const title = document.createElement("h3");
-    title.textContent = row.topic;
-
-    const count = document.createElement("span");
-    count.textContent = `${row.count} 题`;
-    title.append(count);
-
-    const links = document.createElement("div");
-    links.className = "knowledge-topic-links";
-    for (const sample of row.samples || []) {
-      const link = document.createElement("a");
-      link.href = `#${sample.id}`;
-      link.textContent = sample.label;
-      links.append(link);
-    }
-    if (row.count > (row.samples || []).length) {
-      const more = document.createElement("span");
-      more.textContent = `等 ${row.count} 题`;
-      links.append(more);
-    }
-
-    item.append(title, links);
-    fragment.append(item);
-  }
-  els.knowledgeOverviewList.append(fragment);
 }
 
 function renderHome() {
@@ -736,7 +691,6 @@ function renderSubject() {
   els.toggleAnswersBtn.setAttribute("aria-checked", String(state.showAllAnswers));
   els.toggleAnswersBtn.setAttribute("aria-label", state.showAllAnswers ? "隐藏全部答案" : "显示全部答案");
   renderTypeNav(groups);
-  renderKnowledgeOverview();
 
   els.questionList.textContent = "";
   const fragment = document.createDocumentFragment();
@@ -799,7 +753,7 @@ function renderWrongBook() {
     section.append(heading);
 
     rows.forEach((q, index) => {
-      section.append(renderQuestion(q, index + 1, { showWrongCount: true, showKnowledgeBeforeAnswer: true }));
+      section.append(renderQuestion(q, index + 1, { showWrongCount: true }));
     });
 
     fragment.append(section);
@@ -842,14 +796,8 @@ function renderQuestion(q, indexInType, renderOptions = {}) {
   const answerExtra = node.querySelector(".answer-extra");
 
   const objective = isObjective(q);
-  const knowledge = questionKnowledge(q);
   const answerMainText = objective ? "" : `答案：${readableAnswer(q)}`;
-  const answerExtraText = [
-    knowledge?.point && `知识点：${knowledge.point}`,
-    !knowledge && q.explanation && `解析：${q.explanation}`,
-  ]
-    .filter(Boolean)
-    .join("\n");
+  const answerExtraText = q.explanation ? `解析：${q.explanation}` : "";
   answerMain.textContent = answerMainText;
   answerMain.hidden = !answerMainText;
   answerExtra.textContent = answerExtraText;

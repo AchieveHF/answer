@@ -347,6 +347,31 @@ function createBlankNode(answer = "") {
   return blank;
 }
 
+function renderQuestionMedia(q) {
+  const images = Array.isArray(q.images) ? q.images : [];
+  if (!images.length) return null;
+
+  const media = document.createElement("div");
+  media.className = "question-media";
+  for (const image of images) {
+    const src = typeof image === "string" ? image : image.src;
+    if (!src) continue;
+    const link = document.createElement("a");
+    link.className = "question-media-link";
+    link.href = src;
+    link.target = "_blank";
+    link.rel = "noopener";
+
+    const img = document.createElement("img");
+    img.src = src;
+    img.alt = (typeof image === "object" && image.alt) || `${q.subject || ""}${q.number ? `第${q.number}题` : ""}配图`;
+    img.loading = "lazy";
+    link.append(img);
+    media.append(link);
+  }
+  return media.children.length ? media : null;
+}
+
 function correctLetters(q) {
   const answer = String(q.answer || "").toUpperCase();
   if (answer === "T" || answer === "F") return new Set([answer]);
@@ -807,6 +832,9 @@ function renderQuestion(q, indexInType, renderOptions = {}) {
 
   const prompt = node.querySelector(".prompt");
   const promptTerms = highlightTermsForQuestion(q);
+  const options = node.querySelector(".options");
+  const questionMedia = renderQuestionMedia(q);
+  if (questionMedia) node.insertBefore(questionMedia, options);
 
   const answerPanel = node.querySelector(".answer-panel");
   const answerButton = node.querySelector(".answer-toggle");
@@ -841,14 +869,9 @@ function renderQuestion(q, indexInType, renderOptions = {}) {
     }
   }
 
-  const options = node.querySelector(".options");
   const correct = correctLetters(q);
   const choices = answerOptions(q);
   let selected = new Set(state.attempts[q.id]?.selected || []);
-
-  const result = document.createElement("div");
-  result.className = "quiz-result";
-  result.hidden = true;
 
   const actionRow = document.createElement("div");
   actionRow.className = "quiz-actions";
@@ -862,7 +885,6 @@ function renderQuestion(q, indexInType, renderOptions = {}) {
   }
 
   if (actionRow.children.length) node.insertBefore(actionRow, answerButton);
-  node.insertBefore(result, answerButton);
 
   function currentAttempt() {
     return state.attempts[q.id] || { selected: [...selected], checked: false, correct: false };
@@ -892,13 +914,7 @@ function renderQuestion(q, indexInType, renderOptions = {}) {
     });
 
     if (checked) {
-      result.hidden = false;
-      result.className = `quiz-result ${attempt.correct ? "correct" : "wrong"}`;
-      result.textContent = attempt.correct ? "答对了 ✓" : "答错了 ×";
       setVisible(true);
-    } else {
-      result.hidden = true;
-      result.textContent = "";
     }
 
     if (submitButton) {

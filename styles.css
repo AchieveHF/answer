@@ -606,6 +606,26 @@ button:active {
   overflow-wrap: anywhere;
 }
 
+.question-media {
+  display: grid;
+  gap: 8px;
+  margin: 0 0 11px;
+}
+
+.question-media-link {
+  display: block;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: #fff;
+}
+
+.question-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .memory-highlight {
   color: var(--coral);
 }
@@ -745,23 +765,6 @@ button:active {
 .quiz-submit:disabled {
   cursor: not-allowed;
   opacity: 0.55;
-}
-
-.quiz-result {
-  margin-top: 10px;
-  padding: 9px 11px;
-  border-radius: 7px;
-  font-weight: 900;
-}
-
-.quiz-result.correct {
-  background: var(--green-soft);
-  color: var(--green);
-}
-
-.quiz-result.wrong {
-  background: var(--coral-soft);
-  color: var(--coral);
 }
 
 .answer-toggle {

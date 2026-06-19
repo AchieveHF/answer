@@ -14821,7 +14821,13 @@
       "explanation": "",
       "status": "verified",
       "answerSource": "Word 红色答案标注",
-      "sourceFile": "软件工程(1).docx"
+      "sourceFile": "软件工程(1).docx",
+      "images": [
+        {
+          "src": "assets/software-engineering/q0699.png",
+          "alt": "软件工程第3题：CMMI成熟度等级图"
+        }
+      ]
     },
     {
       "id": "q0700",
@@ -14945,7 +14951,13 @@
       "explanation": "",
       "status": "verified",
       "answerSource": "Word 红色答案标注",
-      "sourceFile": "软件工程(1).docx"
+      "sourceFile": "软件工程(1).docx",
+      "images": [
+        {
+          "src": "assets/software-engineering/q0703.png",
+          "alt": "软件工程第7题：加工3分解数据流图"
+        }
+      ]
     },
     {
       "id": "q0704",
@@ -15627,7 +15639,13 @@
       "explanation": "",
       "status": "verified",
       "answerSource": "Word 红色答案标注",
-      "sourceFile": "软件工程(1).docx"
+      "sourceFile": "软件工程(1).docx",
+      "images": [
+        {
+          "src": "assets/software-engineering/q0725.png",
+          "alt": "软件工程第29题：加工1分解数据流图"
+        }
+      ]
     },
     {
       "id": "q0726",
@@ -15720,7 +15738,13 @@
       "explanation": "",
       "status": "verified",
       "answerSource": "Word 红色答案标注",
-      "sourceFile": "软件工程(1).docx"
+      "sourceFile": "软件工程(1).docx",
+      "images": [
+        {
+          "src": "assets/software-engineering/q0728.png",
+          "alt": "软件工程第32题：以数据为中心的软件体系结构图"
+        }
+      ]
     },
     {
       "id": "q0729",
@@ -15937,7 +15961,13 @@
       "explanation": "",
       "status": "verified",
       "answerSource": "Word 红色答案标注",
-      "sourceFile": "软件工程(1).docx"
+      "sourceFile": "软件工程(1).docx",
+      "images": [
+        {
+          "src": "assets/software-engineering/q0735.png",
+          "alt": "软件工程第39题：McCall软件质量模型图"
+        }
+      ]
     },
     {
       "id": "q0736",
@@ -16204,7 +16234,13 @@
       "explanation": "",
       "status": "verified",
       "answerSource": "Word 红色答案标注",
-      "sourceFile": "软件工程(1).docx"
+      "sourceFile": "软件工程(1).docx",
+      "images": [
+        {
+          "src": "assets/software-engineering/q0744.png",
+          "alt": "软件工程第49题：加工4输入数据流图"
+        }
+      ]
     },
     {
       "id": "q0745",
@@ -16297,7 +16333,13 @@
       "explanation": "",
       "status": "verified",
       "answerSource": "Word 红色答案标注",
-      "sourceFile": "软件工程(1).docx"
+      "sourceFile": "软件工程(1).docx",
+      "images": [
+        {
+          "src": "assets/software-engineering/q0747.png",
+          "alt": "软件工程第52题：层次式软件体系结构图"
+        }
+      ]
     },
     {
       "id": "q0748",
@@ -16359,7 +16401,13 @@
       "explanation": "",
       "status": "verified",
       "answerSource": "Word 红色答案标注",
-      "sourceFile": "软件工程(1).docx"
+      "sourceFile": "软件工程(1).docx",
+      "images": [
+        {
+          "src": "assets/software-engineering/q0749.png",
+          "alt": "软件工程第55题：模块耦合度示意图"
+        }
+      ]
     },
     {
       "id": "q0750",
@@ -17807,7 +17855,13 @@
       "explanation": "",
       "status": "verified",
       "answerSource": "题后/红色答案标注",
-      "sourceFile": "软件工程(1).docx"
+      "sourceFile": "软件工程(1).docx",
+      "images": [
+        {
+          "src": "assets/software-engineering/q0799.png",
+          "alt": "软件工程第6题：类A继承关系类图"
+        }
+      ]
     },
     {
       "id": "q0800",
@@ -17821,7 +17875,13 @@
       "explanation": "",
       "status": "verified",
       "answerSource": "题后/红色答案标注",
-      "sourceFile": "软件工程(1).docx"
+      "sourceFile": "软件工程(1).docx",
+      "images": [
+        {
+          "src": "assets/software-engineering/q0800.png",
+          "alt": "软件工程第7题：多重继承类图"
+        }
+      ]
     },
     {
       "id": "q0801",
@@ -17835,7 +17895,13 @@
       "explanation": "",
       "status": "verified",
       "answerSource": "题后/红色答案标注",
-      "sourceFile": "软件工程(1).docx"
+      "sourceFile": "软件工程(1).docx",
+      "images": [
+        {
+          "src": "assets/software-engineering/q0801.png",
+          "alt": "软件工程第8题：UML泳道活动图"
+        }
+      ]
     },
     {
       "id": "q0802",
@@ -17989,7 +18055,13 @@
       "explanation": "",
       "status": "verified",
       "answerSource": "题后/红色答案标注",
-      "sourceFile": "软件工程(1).docx"
+      "sourceFile": "软件工程(1).docx",
+      "images": [
+        {
+          "src": "assets/software-engineering/q0812.png",
+          "alt": "软件工程第19题：line与point关联类图"
+        }
+      ]
     },
     {
       "id": "q0813",
@@ -18171,7 +18243,13 @@
       "explanation": "",
       "status": "verified",
       "answerSource": "题后/红色答案标注",
-      "sourceFile": "软件工程(1).docx"
+      "sourceFile": "软件工程(1).docx",
+      "images": [
+        {
+          "src": "assets/software-engineering/q0825.png",
+          "alt": "软件工程第32题：加工3输入数据流图"
+        }
+      ]
     },
     {
       "id": "q0826",
@@ -18185,7 +18263,13 @@
       "explanation": "",
       "status": "verified",
       "answerSource": "题后/红色答案标注",
-      "sourceFile": "软件工程(1).docx"
+      "sourceFile": "软件工程(1).docx",
+      "images": [
+        {
+          "src": "assets/software-engineering/q0826.png",
+          "alt": "软件工程第33题：整体-部分关系类图"
+        }
+      ]
     },
     {
       "id": "q0827",
@@ -18227,7 +18311,13 @@
       "explanation": "",
       "status": "verified",
       "answerSource": "题后/红色答案标注",
-      "sourceFile": "软件工程(1).docx"
+      "sourceFile": "软件工程(1).docx",
+      "images": [
+        {
+          "src": "assets/software-engineering/q0829.png",
+          "alt": "软件工程第36题：UML实现关系图"
+        }
+      ]
     },
     {
       "id": "q0830",
@@ -18325,7 +18415,13 @@
       "explanation": "",
       "status": "verified",
       "answerSource": "题后/红色答案标注",
-      "sourceFile": "软件工程(1).docx"
+      "sourceFile": "软件工程(1).docx",
+      "images": [
+        {
+          "src": "assets/software-engineering/q0836.png",
+          "alt": "软件工程第43题：类继承关系图"
+        }
+      ]
     },
     {
       "id": "q0837",
@@ -18409,7 +18505,13 @@
       "explanation": "",
       "status": "verified",
       "answerSource": "题后/红色答案标注",
-      "sourceFile": "软件工程(1).docx"
+      "sourceFile": "软件工程(1).docx",
+      "images": [
+        {
+          "src": "assets/software-engineering/q0842.png",
+          "alt": "软件工程第49题：用况图"
+        }
+      ]
     },
     {
       "id": "q0843",
